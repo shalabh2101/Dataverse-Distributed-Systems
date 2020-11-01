@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package message;
+
+option java_package = "com.proto.message";
+option java_multiple_files = true;
+
+message MessageRequest {
+    string message = 1;
+    string filename = 2;
+}
+
+message MessageResponse {
+    string result= 1;
+}
+
+service MessageService {
+    rpc SendMessage(MessageRequest) returns (MessageResponse) {};
+}
